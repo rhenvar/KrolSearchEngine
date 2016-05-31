@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="Search.js"></script>
+    <link href="players.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <script type="text/javascript">
+        (function () {
+            if (window.CHITIKA === undefined) { window.CHITIKA = { 'units': [] }; };
+            var unit = { "calltype": "async[2]", "publisher": "rhenvar", "width": 550, "height": 250, "sid": "Chitika Default" };
+            var placement_id = window.CHITIKA.units.length;
+            window.CHITIKA.units.push(unit);
+            document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+        }());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <div class="page_container" id="search">
+        <input type="text" name="search_input" placeholder="Search" id="search_bar">
+        <input type="submit" value="Search!" id="submit">
+        <div id="suggestions"></div>
+        <img src="loading.gif" id="loading" />
+    </div>
+    <br />
+    <div class="page_container" id="players_container">
+    </div>
+
+    <div id="url_results" class="page_container"></div>
+</body>
+</html>

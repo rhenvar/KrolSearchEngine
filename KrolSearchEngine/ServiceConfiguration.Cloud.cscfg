@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="KrolSearchEngine" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="SearchEngineWebRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=krrolcloudservice;AccountKey=ppunOSbUcwXiNOsod05tbjj5/0b0oWfKAn3TP/C9kDFsVGIY5RUgB0JMt9RIGvhcNNeb2aWEiVBgCeq5FOrL5Q==" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="SearchEngineWorkerRole">
+    <Instances count="4" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=krrolcloudservice;AccountKey=ppunOSbUcwXiNOsod05tbjj5/0b0oWfKAn3TP/C9kDFsVGIY5RUgB0JMt9RIGvhcNNeb2aWEiVBgCeq5FOrL5Q==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>
