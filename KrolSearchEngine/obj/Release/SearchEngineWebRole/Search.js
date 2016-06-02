@@ -22,7 +22,7 @@ function makeRequest() {
 
         $.ajax({
             type: "GET",
-            url: "Wikiservice.asmx/Suggestions?input=" + searchBarText,
+            url: "Admin.asmx/Suggestions?input=" + searchBarText,
             dataType: "json",
             success: function (json) {
                 document.getElementById('suggestions').innerHTML = '';
@@ -69,7 +69,7 @@ function searchPlayer() {
     if (query > 0) {
         $.ajax({
             type: "GET",
-            url: "wikiservice.asmx/Search?input=" + searchBarText.replace(/\s+/g, '_').toLowerCase(),
+            url: "Admin.asmx/Search?input=" + searchBarText.replace(/\s+/g, '_').toLowerCase(),
             success: function () {
 
             }

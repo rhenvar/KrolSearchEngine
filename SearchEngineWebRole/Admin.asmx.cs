@@ -223,9 +223,10 @@ namespace SearchEngineWebRole
             }
 
             // a
-            // cache.Add(partial, Tuple.Create<List<string>, DateTime>(entities.Select(x => x.Title).ToList(), DateTime.Now.Date));
-            var filtered = entities.Select(x => new Tuple<string, string>(x.Title, x.Url)).OrderByDescending(x => InstancesOfPartial(partial, x.Item1)).Distinct().Distinct().ToList().Take(20);
-            return filtered.Select(x => x.Item1 + "||" + x.Item2).ToList();
+            var filtered = entities.Select(x => new Tuple<string, string>(x.Title, x.Url)).OrderByDescending(x => InstancesOfPartial(partial, x.Item1)).Distinct().Distinct().Take(20).ToList();
+            List<string> filteredList = filtered.Select(x => x.Item1 + "||" + x.Item2).ToList();
+            cache.Add(partial, Tuple.Create<List<string>, DateTime>(filteredList, DateTime.Now.Date));
+            return filteredList;
         }
 
         private int InstancesOfPartial(string partial, string title)
@@ -245,23 +246,26 @@ namespace SearchEngineWebRole
         [ScriptMethod(UseHttpGet = true)]
         public DiagnosticEntity GetData()
         {
-            long ticks = DateTime.Now.Ticks;
-            // Ticks per millisecond: 10,000
-            // should look over 10,000 * 100 ticks back to deal w latency
-            //TableQuery<DiagnosticEntity> query = new TableQuery<DiagnosticEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.GreaterThanOrEqual, (ticks - 3000000).ToString()));
-            TableQuery<DiagnosticEntity> query = new TableQuery<DiagnosticEntity>().Where(TableQuery.GenerateFilterConditionForDate("IndexDate", QueryComparisons.GreaterThanOrEqual, DateTime.Now));
-
+            DiagnosticEntity returnEntity = new DiagnosticEntity("", 0, 0, new string[0], new string[0], 0, 0, 0, new Dictionary<string, string>());
+            if (Data != null)
+            {
+                returnEntity.TrieLastTitle = Data.LastTitle;
+                returnEntity.TrieSize = Data.Size;
+            }
+            TableQuery<DiagnosticEntity> query = new TableQuery<DiagnosticEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.NotEqual, "0"));
             var entities = diagnostics.ExecuteQuery(query);
             foreach (DiagnosticEntity dE in entities)
             {
-                if (Data != null)
-                {
-                    dE.TrieLastTitle = Data.LastTitle;
-                    dE.TrieSize = Data.Size;
-                }
-                return dE;
+                returnEntity.CpuUsage = dE.CpuUsage;
+                returnEntity.MemUsage = dE.MemUsage;
+                returnEntity.ErrorUrls = dE.ErrorUrls;
+                returnEntity.LastCrawled = dE.LastCrawled;
+                returnEntity.RoleStats = dE.RoleStats;
+                returnEntity.IndexSize += dE.IndexSize;
+                returnEntity.QueueSize += dE.QueueSize;
+                returnEntity.TotalCrawled += dE.TotalCrawled;
             }
-            return null;
+            return returnEntity;
         }
 
         private void ParseRobots(byte[] data)

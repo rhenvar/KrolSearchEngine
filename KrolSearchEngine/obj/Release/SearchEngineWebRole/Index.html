@@ -2,25 +2,24 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="Search.js"></script>
     <link href="players.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- KrolSearchEngineAd -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-3665564813132229"
-         data-ad-test="on"
-         data-ad-slot="8232561139"
-         data-ad-format="auto"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    <script type="text/javascript">
+        (function () {
+            if (window.CHITIKA === undefined) { window.CHITIKA = { 'units': [] }; };
+            var unit = { "calltype": "async[2]", "publisher": "rhenvar", "width": 550, "height": 250, "sid": "Chitika Default" };
+            var placement_id = window.CHITIKA.units.length;
+            window.CHITIKA.units.push(unit);
+            document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+        }());
     </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
     <div class="page_container" id="search">
-        <input type="text" name="search_input" placeholder="Search NBA Players" id="search_bar">
+        <input type="text" name="search_input" placeholder="Search" id="search_bar">
         <input type="submit" value="Search!" id="submit">
         <div id="suggestions"></div>
         <img src="loading.gif" id="loading" />

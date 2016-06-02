@@ -1,17 +1,19 @@
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] Emulator config file set to C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\csx\Debug\roles\SearchEngineWebRole\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] DiagnosticsStoreRootPath set to: C:\Users\rhenvar\AppData\Local\dftmp\Resources\12b8ae88-eef7-4d5f-9fb5-95114a6406f6
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] Loading config file: C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\csx\Debug\roles\SearchEngineWebRole\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] Config file to read: C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\csx\Debug\roles\SearchEngineWebRole\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] Checking VM Type
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] Emulator config file set to C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\csx\Debug\roles\SearchEngineWebRole\approot\diagnostics.wadcfgx
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] Extension set to Emulator Mode
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] Reading XML configuration file
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] Bypassing private config decryption
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] Stopping the running plugin, if any
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] No DiagnosticsPlugin is running.
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:01 PM] Killing any DiagnosticsPlugin that might remain.
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:02 PM] Killing any MonAgentHost that might remain.
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:02 PM] Diagnostics plugin stopped successfully
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:58:02 PM] Resetting DiagnosticPlugin
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:59:12 PM] DiagnosticsPlugin launched successfully with new configuration
-DiagnosticsPluginLauncher.exe Information: 0 : [5/31/2016 9:59:12 PM] DiagnosticPlugin exited with code 0
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] At least one other instance of the launcher is running. Will wait until they all finish
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] Service running in Emulator Mode, will not wait/kill other instances of the launcher
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] Emulator config file set to C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\csx\Debug\roles\SearchEngineWebRole\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] DiagnosticsStoreRootPath set to: C:\Users\rhenvar\AppData\Local\dftmp\Resources\be66e3a4-e841-4fd5-a9f0-3739508bc6dd
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] Loading config file: C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\csx\Debug\roles\SearchEngineWebRole\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] Config file to read: C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\csx\Debug\roles\SearchEngineWebRole\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] Checking VM Type
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] Emulator config file set to C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\csx\Debug\roles\SearchEngineWebRole\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] Extension set to Emulator Mode
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] Reading XML configuration file
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] Bypassing private config decryption
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:55 PM] Stopping the running plugin, if any
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:56 PM] No DiagnosticsPlugin is running.
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:56 PM] Killing any DiagnosticsPlugin that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:56 PM] Killing any MonAgentHost that might remain.
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:56 PM] Diagnostics plugin stopped successfully
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:17:56 PM] Resetting DiagnosticPlugin
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:19:07 PM] DiagnosticsPlugin launched successfully with new configuration
+DiagnosticsPluginLauncher.exe Information: 0 : [6/2/2016 12:19:07 PM] DiagnosticPlugin exited with code 0

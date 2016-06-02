@@ -1,0 +1,48 @@
+https://github.com/rhenvar/KrolSearchEngine.git
+http://krolcloudservice.cloudapp.net/
+http://krolcloudservice.cloudapp.net/Admin.html
+
+
+For this assignment I ad to utilize the knowledge and skills of the past 3 in
+order to build a functioning search engine that can both quickly and
+responsively return results based on relevance to the user. First things first
+I inverted the index of my original url table so that entities were
+partitioned by key word (individual word contained in the title) and then
+identified by title in the rowkey. This allowed me to query azure table
+storage quickly and by partition instead of getting slowed down by comparing
+fields in the vanilla URL table
+
+The next challenge was finding a way to order my results by relevance (matches
+from the user input to the actual title). I used LINQ to filter through my
+query entity results and defined a method that returned a relevance count of
+the title and then filtered with OrderBy and the return value of that method.
+This allowed me to efficiently and elegantly return the top 20 results back to
+the user. 
+
+Next, I had to make sure I could properly define crossdomain calls to my AWS
+instance for retrieving structured data back as NBA players and their stats.
+Unfortunatley I lost my .pem certificate locally so I had to reimage my
+existing EC2 instance, detach the volume, edit the authorized keys via a
+temporary instance, and reattach /dev/sda to the original instance. After
+re-gaining access (thank AWS for the thorough documentation) I implemented my
+search.php webservice to return a jsonp callback instead of vanilla json. Via
+jQuery ajax on the front end and the callback parameter on the serverside I
+Was able to efficiently make crossdomain calls and properly display NBA player
+data. 
+
+Next I implemented caching by simply adding a dictionary field to my ASMX so I
+could quickly and efficiently look up previous results searched by users
+instantly. By pointing a string partial to a List<string> this allowed me to
+get results back instantaneously. 
+
+Because googleadsense blocks many sites (mine included) I decided to use
+Chitika for my ads. It was a simple process and was only a matter of copying
+and pasting frontend script code into my body which pasted vanilla
+advertisements into my DOM. 
+
+For extra credit I implemented the Hybrid List trie by keeping both a list and
+dictionary as instance variables in my TrieNode which converted the suffixes
+into a trie after 20 suffixes have been reached. In traversing my trie I made
+use of c#'s dynamic keyword which helped me return actual results if a user
+typed in a partial which ended up traversing to a node with no childnodes
+(contains a list of suffixes instead). 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="KrolSearchEngine" generation="1" functional="0" release="0" Id="b576c00e-cc1a-4957-8857-b237177b053a" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
+<serviceModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="KrolSearchEngine" generation="1" functional="0" release="0" Id="7e246ce4-c5cb-4d13-96e8-8b35d1f9515d" dslVersion="1.2.0.0" xmlns="http://schemas.microsoft.com/dsltools/RDSM">
   <groups>
     <group name="KrolSearchEngineGroup" generation="1" functional="0" release="0">
       <componentports>
@@ -110,9 +110,9 @@
     </group>
   </groups>
   <implements>
-    <implementation Id="bb347fd4-2e7a-47ae-ba57-1a5d260004da" ref="Microsoft.RedDog.Contract\ServiceContract\KrolSearchEngineContract@ServiceDefinition">
+    <implementation Id="d35098d4-f0c5-4da0-b546-f7284153cab2" ref="Microsoft.RedDog.Contract\ServiceContract\KrolSearchEngineContract@ServiceDefinition">
       <interfacereferences>
-        <interfaceReference Id="7535cb4c-310b-43c6-ab37-edf9c19d37b3" ref="Microsoft.RedDog.Contract\Interface\SearchEngineWebRole:Endpoint1@ServiceDefinition">
+        <interfaceReference Id="9a7c973f-68e7-4052-acfc-8fa2e9c6d7ee" ref="Microsoft.RedDog.Contract\Interface\SearchEngineWebRole:Endpoint1@ServiceDefinition">
           <inPort>
             <inPortMoniker name="/KrolSearchEngine/KrolSearchEngineGroup/SearchEngineWebRole:Endpoint1" />
           </inPort>

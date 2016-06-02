@@ -8,6 +8,8 @@ namespace KrolCloudLibrary
     [XmlRoot("DiagnosticEntity")]
     public class DiagnosticEntity : TableEntity
     {
+        [XmlElement(ElementName ="InstanceID")]
+        public string RoleInstanceId { get; set; }
         [XmlElement(ElementName = "CpuUsage")]
         public string CpuUsage { get; set; }
         [XmlElement(ElementName = "MemLeft")]
@@ -31,9 +33,11 @@ namespace KrolCloudLibrary
         [XmlElement(ElementName = "TrieLastTitle")]
         public string TrieLastTitle { get; set; }
 
-        public DiagnosticEntity(float cpuUsage, float memUsage, string[] lastCrawled, string[] errorUrls, int totalCrawled, int queueSize, int indexSize, Dictionary<string, string> roleStats)
+        public DiagnosticEntity(string roleInstanceId, float cpuUsage, float memUsage, string[] lastCrawled, string[] errorUrls, int totalCrawled, int queueSize, int indexSize, Dictionary<string, string> roleStats)
         {
-            this.PartitionKey = Convert.ToString(DateTime.Now.Ticks);
+            this.PartitionKey = roleInstanceId;
+            this.RowKey = "DummyKey";
+            this.RoleInstanceId = roleInstanceId;
             this.CpuUsage = Convert.ToString(cpuUsage);
             this.MemUsage = Convert.ToString(memUsage);
             this.LastCrawled = string.Join("|||", lastCrawled);
@@ -47,7 +51,6 @@ namespace KrolCloudLibrary
                 RoleStats += pair.Key + "|" + pair.Value + "||";
             }
             this.IndexDate = DateTime.Now;
-            this.RowKey = DateTime.Now.Ticks.ToString();
         }
 
         public DiagnosticEntity() { }

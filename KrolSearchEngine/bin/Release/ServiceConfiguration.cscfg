@@ -16,7 +16,7 @@
     </ConfigurationSettings>
   </Role>
   <Role name="SearchEngineWorkerRole">
-    <Instances count="1" />
+    <Instances count="4" />
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=krrolcloudservice;AccountKey=ppunOSbUcwXiNOsod05tbjj5/0b0oWfKAn3TP/C9kDFsVGIY5RUgB0JMt9RIGvhcNNeb2aWEiVBgCeq5FOrL5Q==" />
     </ConfigurationSettings>

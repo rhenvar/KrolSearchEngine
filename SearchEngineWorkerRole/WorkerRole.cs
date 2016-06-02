@@ -48,6 +48,9 @@ namespace SearchEngineWorkerRole
         public static CloudTable diagnosticTable = tableClient.GetTableReference("diagnostictable");
         public static Regex r = new Regex("^[a-zA-Z0-9]*$");
 
+        private static volatile int IndexSize;
+        private static volatile int QueueSize;
+
 
         public override void Run()
         {
@@ -128,7 +131,8 @@ namespace SearchEngineWorkerRole
                     float cpuUsage = theCPUCounter.NextValue();
                     float memUsage = theMemCounter.NextValue();
 
-                    DiagnosticEntity diagnosticEntity = new DiagnosticEntity(cpuUsage, memUsage, lastTen.ToArray(), lastTenError.ToArray(), CloudCounter.IndexSize, CloudCounter.QueueSize, CloudCounter.IndexSize, roleStatus);
+                    string instanceId = RoleEnvironment.CurrentRoleInstance.Id;
+                    DiagnosticEntity diagnosticEntity = new DiagnosticEntity(instanceId, cpuUsage, memUsage, lastTen.ToArray(), lastTenError.ToArray(), visitedUrls.Size(), QueueSize, IndexSize, roleStatus);
                     InsertDiagnostics(diagnosticEntity);
 
                     Thread.Sleep(1000);
@@ -142,8 +146,9 @@ namespace SearchEngineWorkerRole
 
         private void InsertDiagnostics(DiagnosticEntity entity)
         {
-            TableOperation insert = TableOperation.Insert(entity);
-            diagnosticTable.Execute(insert);
+            //TableOperation insert = TableOperation.Insert(entity);
+            TableOperation insertOrUpdate = TableOperation.InsertOrReplace(entity);
+            diagnosticTable.Execute(insertOrUpdate);
         }
 
         private void ParseForbiddenUrls()
@@ -161,8 +166,8 @@ namespace SearchEngineWorkerRole
         {
             // ADD 3 OF SAME THREADS WITH SEQUENTIAL CODE MUCH EASIER
             ServicePointManager.DefaultConnectionLimit = 12;
-            CloudCounter.IndexSize = 0;
-            CloudCounter.QueueSize = 0;
+            IndexSize = 0;
+            QueueSize = 0;
 
             xmlQueue.CreateIfNotExists();
             workers.Add(new PageWorker());
@@ -214,7 +219,7 @@ namespace SearchEngineWorkerRole
                     else if (UriValidator.IsValidHtml(url) || url.Contains("bleacherreport"))
                     {
                         htmlQueue.AddMessage(message);
-                        CloudCounter.IncrementQueue();
+                        Interlocked.Increment(ref QueueSize);
                     }
                 }
             }
@@ -315,7 +320,7 @@ namespace SearchEngineWorkerRole
                             {
                                 CloudQueueMessage newHtmlPage = new CloudQueueMessage(foundUrl);
                                 htmlQueue.AddMessage(newHtmlPage);
-                                CloudCounter.IncrementQueue();
+                                Interlocked.Increment(ref QueueSize);
                             }
                         }
                     }
@@ -330,7 +335,7 @@ namespace SearchEngineWorkerRole
             {
                 TableOperation insert = TableOperation.Insert(titlePage);
                 urlTable.Execute(insert);
-                CloudCounter.IncrementIndex();
+                Interlocked.Increment(ref IndexSize);
             }
         }
     }

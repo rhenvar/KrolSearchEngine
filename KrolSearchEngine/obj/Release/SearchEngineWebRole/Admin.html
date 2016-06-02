@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Krol Web Crawler</title>
+    <meta charset="utf-8" />
+    <script src="Admin.js"></script>
+</head>
+<body>
+
+    <fieldset>
+        <legend>Counters</legend>
+        <p id="queuesize"></p> <br />
+        <p id="indexsize"></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Trie Data</legend>
+        <p id="triesize"></p>
+        <p id="trielasttitle"></p>
+    </fieldset> 
+
+    <fieldset>
+        <legend>Performance</legend>
+        <p id="cpu"></p> <br />
+        <p id="mem"></p> <br />
+    </fieldset>
+
+    <fieldset>
+        <legend>Worker Statuses</legend>
+        <div id="workers">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div id="lastten">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div id="lasttenerror">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <button id="resume">Resume Crawling</button>
+        <button id="stop">Stop Crawling</button>
+    </fieldset>
+
+    <input type="text" id="url" />
+    <button id="search">Search Title</button>
+    <div id="titleoutput"></div>
+
+    <button id="clearqueue">Clear Queue</button>
+    <button id="clearindex">Clear Index</button>
+</body>
+</html>

@@ -117,9 +117,10 @@ C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSear
 C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWorkerRole\zh-Hant\Microsoft.Data.Services.Client.resources.dll
 C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWorkerRole\zh-Hant\System.Spatial.resources.dll
 C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWebRole\Admin.asmx
+C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWebRole\Admin.html
+C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWebRole\Admin.js
 C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWebRole\Index.html
 C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWebRole\packages.config
 C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWebRole\players.css
 C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWebRole\Search.js
 C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWebRole\Web.config
-C:\Users\rhenvar\Documents\Visual Studio 2015\Projects\KrolSearchEngine\KrolSearchEngine\obj\Release\SearchEngineWebRole\Wikiservice.asmx

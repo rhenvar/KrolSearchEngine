@@ -74,7 +74,6 @@
   <ItemGroup>
     <Compile Include="AccountManager.cs" />
     <Compile Include="BlobManager.cs" />
-    <Compile Include="CloudCounter.cs" />
     <Compile Include="ConcurrentFixedQueue.cs" />
     <Compile Include="ConcurrentSet.cs" />
     <Compile Include="DiagnosticEntity.cs" />

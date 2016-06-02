@@ -12,7 +12,7 @@ function setup() {
     dataCall();
     var timeout = setInterval(function () {
         dataCall();
-    }, 10000);
+    }, 3000);
 }
 
 function clearQueue() {
